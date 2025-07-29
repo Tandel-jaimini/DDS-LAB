@@ -1,0 +1,42 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+struct Node
+{
+    int val;
+    struct Node* next;
+    
+};
+struct Node* start;
+struct Node*getnode()
+{
+    struct Node* p;
+    p=(struct Node*)malloc(sizeof(struct Node));
+    printf("give value for new node \n");
+    scanf("%d",&(p->val));
+    p->next = NULL;
+}
+void Traverse()
+{
+    struct Node* p;
+    p=start;
+    printf("the linked list is \n");
+    while (p != NULL)
+    {
+        printf("%d \t",p->val);
+        p=p->next;
+    }
+}
+int main()
+{
+    start = getnode();
+    start->next=getnode();
+    start->next->next=getnode();
+    start->next->next->next=getnode();
+    start->next->next->next->next=getnode();
+    
+    Traverse();
+    
+    return 0;
+    
+}
